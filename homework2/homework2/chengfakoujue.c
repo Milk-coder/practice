@@ -1,15 +1,22 @@
-#include<stdio.h>
+#include <stdio.h>
 int main(){
-	int i = 1;
-	while (i <= 9){
-		int j = 1;
+	int i = 100;
+	int count = 0;
+	while (i <= 200){
+		int j = 2;
 		while (j <= i){
-			printf("%d * %d = %d ", i, j, i * j);
+			if (i % j == 0){
+				break;
+			}
 			j++;
 		}
-		printf("\n");
+		if (j == i){
+			count++;
+			printf("%d ", i);
+		}
 		i++;
 	}
-	system("pause");
-	return 0;
-}
+		printf("\ncount = %d\n", count);
+		system("pause");
+		return 0;
+	}
